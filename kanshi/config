@@ -1,0 +1,14 @@
+# ~/.config/kanshi/config
+
+# Perfil quando o monitor externo estiver conectado
+
+profile docked {
+    output HDMI-A-1 mode 2560x1440@60 position 0,0 scale 1
+    output eDP-1 disable
+}
+
+# Perfil quando estiver só com a tela do notebook
+profile mobile {
+    output eDP-1 enable mode 1920x1080@60 position 0,0 scale 1.5
+}
+
