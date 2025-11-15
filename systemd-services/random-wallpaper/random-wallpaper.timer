@@ -1,0 +1,10 @@
+[Unit]
+Description=Run random wallpaper script every 2 hours
+
+[Timer]
+OnBootSec=5m
+OnUnitActiveSec=2h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

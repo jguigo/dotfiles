@@ -24,6 +24,10 @@ eval "$(starship init zsh)"
 # ╰──────────────────────────────────────────────────────────╯
   
 alias code="codium"
+alias change-waybar='bash ~/dotfiles/scripts/set-waybar-theme.sh'
+alias pac-installed="pacman -Qqe | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias polkit="/usr/lib/polkit-kde-authentication-agent-1"
+
 
 # ╭──────────────────────────────────────────────────────────╮
 # │ Exports 						                                     │ 
@@ -48,5 +52,5 @@ fi
 # ╰──────────────────────────────────────────────────────────╯
 
 jira() {
-  zen-browser "https://nuvidio.atlassian.net/browse/$1"
+	google-chrome-stable "https://nuvidio.atlassian.net/browse/$1"
 }

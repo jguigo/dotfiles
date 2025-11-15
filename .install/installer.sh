@@ -20,6 +20,14 @@ echo -e "\033[31mWarning: $dest already exists but is not a symbolic link. Skipp
 create_symlink hypr ~/.config/hypr
 create_symlink kanshi ~/.config/kanshi
 create_symlink kitty ~/.config/kitty
+create_symlink waybar ~/.config/waybar
+create_symlink rofi ~/.config/rofi
+create_symlink nvim ~/.config/nvim
+create_symlink wlogout ~/.config/wlogout
 
 # Files
 create_symlink .zshrc ~/.zshrc
+
+# systemd
+create_symlink systemd-services/random-wallpaper/random-wallpaper.service ~/.config/systemd/user/random-wallpaper.service
+create_symlink systemd-services/random-wallpaper/random-wallpaper.timer ~/.config/systemd/user/random-wallpaper.timer

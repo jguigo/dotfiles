@@ -1,0 +1,27 @@
+{
+    "label" : "lock",
+    "action" : "swaylock",
+    "text" : "[L] Lock",
+    "keybind" : "l"
+}
+
+{
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit 0",
+    "text" : "[E] Logout",
+    "keybind" : "e"
+}
+
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "[S] Shutdown",
+    "keybind" : "s"
+}
+
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "[R] Reboot",
+    "keybind" : "r"
+}

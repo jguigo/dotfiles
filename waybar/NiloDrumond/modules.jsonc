@@ -1,0 +1,138 @@
+{
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": true,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 3
+    }
+  },
+  "hyprland/language": {
+    "format": "   {}",
+    "format-en": "US",
+    "format-en-intl": "US-INTL  ",
+    "format-ru": "RU  "
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "rewrite": {
+      "Kitty": "Terminal"
+    }
+  },
+  "sway/language": {
+    "format": "{}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+  },
+  "hyprland/window": {
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1"
+    },
+    "separate-outputs": true
+  },
+  "custom/updates": {
+    "format": "{icon} {0}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": " ",
+      "updated": "󰗠 "
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+  },
+  // Updates Count
+  // "custom/updates": {
+  //   "format": "  {}",
+  //   "escape": true,
+  //   "return-type": "json",
+  //   "exec": "~/.config/scripts/updates.sh",
+  //   "restart-interval": 30,
+  //   "on-click": "kitty --session sessions/installupdates",
+  // },
+  // Power Menu
+  "custom/exit": {
+    "format": "󰐥",
+    "on-click": "~/dotfiles/scripts/logoutlaunch.sh",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%b %d - %R}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "actions": {
+      // TODO
+      "on-click": "cat ~/temp.txt"
+    }
+  },
+  // Network
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "   {signalStrength}%",
+    "format-ethernet": "",
+    "format-disconnected": "Not connected", //An empty format will hide the module.
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "~/dotfiles/.settings/networkmanager.sh"
+  },
+  // Battery
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 35,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    // "format-alt": "{icon}  {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [" ", " ", " ", " ", " "]
+  },
+  // Pulseaudio
+  "pulseaudio": {
+    "scroll-step": 0.2, // %, can be a float
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", " ", " "]
+    },
+    "on-click": "pavucontrol --tab=3",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  // Bluetooth
+  "bluetooth": {
+    "format": "󰂯 {status}",
+    "format-connected": "󰂱  {status}",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "on-click-right": "rfkill toggle bluetooth"
+  }
+}
