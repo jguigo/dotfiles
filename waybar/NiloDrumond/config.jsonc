@@ -25,7 +25,7 @@
     "pulseaudio",
     "network",
     "bluetooth",
-    "clock"
-    // "custom/exit"
+    "clock",
+    "custom/exit"
   ]
 }
