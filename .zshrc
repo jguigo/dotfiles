@@ -1,5 +1,12 @@
 # ╭──────────────────────────────────────────────────────────╮
-# │ oh-my-zsh						                                     │
+# │ FNM (Node Version Manager)                               │
+# ╰──────────────────────────────────────────────────────────╯
+
+eval "$(fnm env --use-on-cd)"
+
+
+# ╭──────────────────────────────────────────────────────────╮
+# │ Oh-My-Zsh                                                │
 # ╰──────────────────────────────────────────────────────────╯
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -13,31 +20,29 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+
 # ╭──────────────────────────────────────────────────────────╮
-# │ Starship 						                                     │
+# │ Starship Prompt                                          │
 # ╰──────────────────────────────────────────────────────────╯
 
 eval "$(starship init zsh)"
 
+
 # ╭──────────────────────────────────────────────────────────╮
-# │ Aliases 						                                     │
+# │ Aliases                                                  │
 # ╰──────────────────────────────────────────────────────────╯
-  
+
 alias code="codium"
 alias change-waybar='bash ~/dotfiles/scripts/set-waybar-theme.sh'
-alias pac-installed="pacman -Qqe | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias pac-installed="pacman -Qqe | fzf --preview 'pacman -Qil {}' --layout=reverse --bind \"enter:execute(pacman -Qil {} | less)\""
 alias polkit="/usr/lib/polkit-kde-authentication-agent-1"
 
 
 # ╭──────────────────────────────────────────────────────────╮
-# │ Exports 						                                     │ 
+# │ Environment Variables                                    │
 # ╰──────────────────────────────────────────────────────────╯
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Reading dotenv
+# Load environment variables from your custom .env file
 if [ -f "$HOME/dotfiles/.env" ]; then
     while IFS= read -r line; do
         if [[ ! $line =~ ^# ]]; then
@@ -48,9 +53,9 @@ fi
 
 
 # ╭──────────────────────────────────────────────────────────╮
-# │ snippets 						                                     │
+# │ Functions / Snippets                                     │
 # ╰──────────────────────────────────────────────────────────╯
 
 jira() {
-	google-chrome-stable "https://nuvidio.atlassian.net/browse/$1"
+  google-chrome-stable "https://nuvidio.atlassian.net/browse/$1"
 }
