@@ -1,10 +1,30 @@
-require('telescope').setup {
+require('telescope').setup({
+  defaults = {
+    file_ignore_patterns = {
+      "%.git/",
+      "node_modules/",
+      "%.vscode/",
+    },
+  },
+
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+
+    live_grep = {
+      additional_args = function(_)
+        return { "--hidden" }
+      end,
+    },
+  },
+
   extensions = {
     ['ui-select'] = {
       require('telescope.themes').get_dropdown(),
     },
   },
-}
+})
 
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'ui-select')
