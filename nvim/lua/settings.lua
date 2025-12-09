@@ -14,6 +14,8 @@ o.showmode = false -- Do not show mode (-- INSERT --), statusline handles it
 o.signcolumn = 'yes' -- Always show the sign column
 o.cursorline = true -- Highlight the current line
 o.scrolloff = 10 -- Keep lines above/below cursor when scrolling
+o.softtabstop = 2 --- Insert 2 spaces for a tab
+o.tabstop = 2 --- Insert 2 spaces for a tab
 
 o.ignorecase = true -- Case-insensitive search
 o.smartcase = true -- Case-sensitive if uppercase is used in the search
@@ -28,12 +30,12 @@ o.timeoutlen = 300 -- Timeout for key mappings (in ms)
 o.splitright = true -- Vertical splits open to the right
 o.splitbelow = true -- Horizontal splits open below
 
-o.list = true -- Show invisible characters
-vim.opt.listchars = { -- Configure how they appear
-  tab = '» ',
-  trail = '·',
-  nbsp = '␣'
-}
+-- o.list = true -- Show invisible characters
+-- vim.opt.listchars = { -- Configure how they appear
+--   tab = '» ',
+--   trail = '·',
+--   nbsp = '␣',
+-- }
 
 o.confirm = true -- Ask for confirmation when closing modified files
 o.termguicolors = true -- Enable 24-bit color so themes render correctly
