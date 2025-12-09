@@ -109,6 +109,16 @@ require('lazy').setup {
   },
 
   {
+    'otavioschwanck/arrow.nvim',
+    dependencies = {
+      { 'echasnovski/mini.icons' },
+    },
+    config = function()
+      require 'plugins.arrow'
+    end,
+  },
+
+  {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = function()
