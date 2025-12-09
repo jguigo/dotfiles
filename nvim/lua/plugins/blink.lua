@@ -1,12 +1,12 @@
-require("blink.cmp").setup({
+require('blink.cmp').setup {
   keymap = {
-    preset = "super-tab",
+    preset = 'super-tab',
   },
   appearance = {
-    nerd_font_variant = "mono",
+    nerd_font_variant = 'mono',
   },
   completion = {
-    documentation = { auto_show = false },
+    documentation = { auto_show = true },
   },
   sources = {
     default = { 'lsp', 'path', 'snippets', 'lazydev' },
@@ -14,7 +14,8 @@ require("blink.cmp").setup({
       lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
     },
   },
-  snippets = { preset = "luasnip" },
-  fuzzy = { implementation = "lua" },
+  snippets = { preset = 'luasnip' },
+  fuzzy = { implementation = 'lua' },
   signature = { enabled = true },
-})
+}
+
