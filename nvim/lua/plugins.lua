@@ -73,6 +73,18 @@ require('lazy').setup {
     end,
   },
 
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      'rcarriga/nvim-dap-ui',
+      'leoluz/nvim-dap-go',
+      'nvim-neotest/nvim-nio',
+    },
+    config = function()
+      require 'plugins.debugging'
+    end,
+  },
+
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
