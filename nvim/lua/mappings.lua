@@ -18,5 +18,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<M-J>', 'yyp', { desc = 'Duplicate line below' })
-
 vim.keymap.set('n', '<M-K>', 'yyP', { desc = 'Duplicate line above' })
+
+vim.keymap.set('v', '<M-J>', "y'>p gv", { desc = 'Duplicate block below' })
+vim.keymap.set('v', '<M-K>', 'yP gv', { desc = 'Duplicate block above' })
