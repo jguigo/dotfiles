@@ -1,41 +1,41 @@
-local g = vim.g
-local o = vim.o
+-- set spacebar as <leader>
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
+vim.keymap.set("v", "<Space>", "<Nop>", { silent = true, remap = false })
+vim.g.mapleader = " "
+vim.g.have_nerd_font = true
 
-g.mapleader = ' ' -- Set <Leader> key to space
-g.maplocalleader = ' ' -- Set <LocalLeader> key to space
-g.have_nerd_font = true -- Indicates Nerd Font support
+local options = {
+	number = true,
+	relativenumber = true,
+	mouse = "a",
+	clipboard = "unnamedplus",
+	showmode = false,
 
-o.number = true -- Show absolute line numbers
-o.relativenumber = true -- Show relative line numbers
-o.mouse = 'a' -- Enable mouse support
-o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
-o.showmode = false -- Do not show mode (-- INSERT --), statusline handles it
+	signcolumn = "yes",
+	cursorline = true,
+	scrolloff = 10,
+	softtabstop = 2,
+	tabstop = 2,
 
-o.signcolumn = 'yes' -- Always show the sign column
-o.cursorline = true -- Highlight the current line
-o.scrolloff = 10 -- Keep lines above/below cursor when scrolling
-o.softtabstop = 2 --- Insert 2 spaces for a tab
-o.tabstop = 2 --- Insert 2 spaces for a tab
+	ignorecase = true,
+	smartcase = true,
 
-o.ignorecase = true -- Case-insensitive search
-o.smartcase = true -- Case-sensitive if uppercase is used in the search
+	breakindent = true,
+	undofile = true,
+	inccommand = "split",
 
-o.breakindent = true -- Maintain indentation when wrapping lines
-o.undofile = true -- Enable persistent undo history
-o.inccommand = 'split' -- Live preview of substitutions in a split window
+	updatetime = 250,
+	timeoutlen = 300,
 
-o.updatetime = 250 -- Faster update time for events like CursorHold
-o.timeoutlen = 300 -- Timeout for key mappings (in ms)
+	splitright = true,
+	splitbelow = true,
 
-o.splitright = true -- Vertical splits open to the right
-o.splitbelow = true -- Horizontal splits open below
+	swapfile = false,
+	confirm = true,
 
--- o.list = true -- Show invisible characters
--- vim.opt.listchars = { -- Configure how they appear
---   tab = '» ',
---   trail = '·',
---   nbsp = '␣',
--- }
+	termguicolors = true,
+}
 
-o.confirm = true -- Ask for confirmation when closing modified files
-o.termguicolors = true -- Enable 24-bit color so themes render correctly
+for k, v in pairs(options) do
+	vim.o[k] = v
+end
