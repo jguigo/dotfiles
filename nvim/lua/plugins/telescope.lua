@@ -13,12 +13,6 @@ return {
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
-			{
-				"ahmedkhalf/project.nvim",
-				config = function()
-					require("project_nvim").setup({})
-				end,
-			},
 		},
 		config = function()
 			require("telescope").setup({
@@ -50,7 +44,6 @@ return {
 			})
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
-			pcall(require("telescope").load_extension, "projects")
 
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
@@ -81,10 +74,6 @@ return {
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
-
-			vim.keymap.set("n", "<leader>sp", function()
-				require("telescope").extensions.projects.projects({})
-			end, { desc = "[S]earch [P]rojects" })
 		end,
 	},
 }
