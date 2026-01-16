@@ -4,6 +4,7 @@ local servers = {
 			Lua = { diagnostics = { globals = { "vim" } } },
 		},
 	},
+	tailwindcss = {},
 	ts_ls = {},
 	html = {},
 	cssls = {},
@@ -84,6 +85,28 @@ return {
 					end
 				end,
 			})
+
+			vim.lsp.config("tailwindcss", {
+				capabilities = capabilities,
+				settings = {
+					tailwindCSS = {
+						experimental = {
+							classRegex = {
+								"tw`([^`]*)",
+								'tw="([^"]*)',
+								'tw={"([^"}]*)',
+								"tw\\.\\w+`([^`]*)",
+								"tw\\(.*?\\)`([^`]*)",
+								{ "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+								{ "classnames\\(([^)]*)\\)", "'([^']*)'" },
+								{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+								{ "cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+							},
+						},
+					},
+				},
+			})
+			vim.lsp.enable("tailwindcss")
 
 			vim.diagnostic.config({
 				severity_sort = true,
