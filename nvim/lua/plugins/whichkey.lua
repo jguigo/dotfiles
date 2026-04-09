@@ -3,9 +3,10 @@ return {
 		"folke/which-key.nvim",
 		event = "VimEnter",
 		config = function()
-			require("which-key").setup({
-				delay = 0,
+			local wk = require("which-key")
 
+			wk.setup({
+				delay = 0,
 				icons = {
 					mappings = vim.g.have_nerd_font,
 					keys = vim.g.have_nerd_font and {} or {
@@ -39,12 +40,17 @@ return {
 						F12 = "<F12>",
 					},
 				},
-
 				spec = {
 					{ "<leader>s", group = "[S]earch" },
 					{ "<leader>t", group = "[T]oggle" },
 					{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 				},
+			})
+
+			wk.add({
+				mode = { "n", "v" },
+				{ "x", '"_x', hidden = true },
+				{ "<C-s>", ":w<CR>", desc = "Save file" },
 			})
 		end,
 	},

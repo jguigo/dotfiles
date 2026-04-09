@@ -6,7 +6,7 @@ vim.g.have_nerd_font = true
 
 local options = {
 	number = true,
-	relativenumber = true,
+	relativenumber = false,
 	mouse = "a",
 	clipboard = "unnamedplus",
 	showmode = false,
