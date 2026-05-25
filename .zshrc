@@ -1,9 +1,7 @@
 # ╭──────────────────────────────────────────────────────────╮
-# │ FNM (Node Version Manager)                               │
+# │ Language Version Manager                                 │
 # ╰──────────────────────────────────────────────────────────╯
 
-eval "$(fnm env --use-on-cd)"
-eval "$(pyenv init -)"
 eval "$(/home/jguigo/.local/bin/mise activate zsh)"
 
 
