@@ -1,5 +1,5 @@
 [Unit]
-Description=Run random wallpaper script every 2 hours
+Description=Run random wallpaper script every hour
 
 [Timer]
 OnBootSec=5m

@@ -1,5 +1,5 @@
 [Unit]
-Description=Set a random wallpaper using swww
+Description=Set a random wallpaper using awww
 
 [Service]
 ExecStart=%h/dotfiles/scripts/random-wallpaper.sh

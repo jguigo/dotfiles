@@ -30,6 +30,7 @@ create_symlink wlogout ~/.config/wlogout
 create_symlink .zshrc ~/.zshrc
 
 # systemd
+mkdir -p ~/.config/systemd/user/
 create_symlink systemd-services/random-wallpaper/random-wallpaper.service ~/.config/systemd/user/random-wallpaper.service
 create_symlink systemd-services/random-wallpaper/random-wallpaper.timer ~/.config/systemd/user/random-wallpaper.timer
 
